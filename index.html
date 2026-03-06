@@ -7,7 +7,7 @@
   <meta name="keywords" content="objectifs, IA, intelligence artificielle, productivité, accompagnement, micro-actions, planification">
   <meta name="author" content="Hariny DJEARAMANE">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.sheedoz.app/">
   <meta property="og:title" content="Sheedoz - Transforme tes objectifs en réalité">
@@ -23,10 +23,8 @@
 
   <title>Sheedoz - Transforme tes objectifs en réalité</title>
 
-  <!-- Favicon amélioré -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,145 +34,259 @@
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
 <body>
 
-<header class="header" id="header">
-  <div class="container">
-    <div class="header__container">
-
-      <a href="#" class="logo">
-        <img src="assets/images/logo.png" alt="Sheedoz Logo">
-        <span>Sheedoz</span>
-      </a>
-
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a href="#fonctionnalites" class="nav__link">Fonctionnalités</a></li>
-          <li><a href="#tarifs" class="nav__link">Tarifs</a></li>
-          <li><a href="#contact" class="nav__link">Contact</a></li>
-          <li><a href="#" class="btn btn--primary">Télécharger</a></li>
-        </ul>
-      </nav>
-
-      <button class="menu-toggle" aria-label="Ouvrir le menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </div>
-  </div>
-
-  <div class="mobile-menu">
-    <button class="mobile-menu__close" aria-label="Fermer le menu">&times;</button>
-    <ul class="mobile-menu__list">
-      <li><a href="#fonctionnalites" class="mobile-menu__link">Fonctionnalités</a></li>
-      <li><a href="#tarifs" class="mobile-menu__link">Tarifs</a></li>
-      <li><a href="#contact" class="mobile-menu__link">Contact</a></li>
-      <li><a href="#" class="btn btn--primary btn--large">Télécharger</a></li>
-    </ul>
-  </div>
-
-</header>
-
-
-<section class="hero">
-  <div class="container">
-    <div class="hero__container">
-
-      <div class="hero__content animate-on-scroll">
-        <h1 class="hero__title">Transforme tes objectifs en réalité</h1>
-        <p class="hero__subtitle">Clarifie. Planifie. Passe à l’action.</p>
-
-        <div class="hero__cta btn-group">
-
-          <a href="https://apps.apple.com/app/sheedoz" class="btn btn--primary btn--large">
-
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09z"/>
-              <path d="M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-            </svg>
-
-            App Store
-          </a>
-
-          <a href="https://play.google.com/store/apps/details?id=com.harinydjearamane.sheedoz" class="btn btn--secondary btn--large">
-
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z"/>
-              <path d="M14.5 12.707l2.302 2.302-10.937 6.333 8.635-8.635z"/>
-              <path d="M17.698 9.509l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12z"/>
-              <path d="M5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
-            </svg>
-
-            Google Play
-          </a>
-
-        </div>
-      </div>
-
-      <div class="hero__visual animate-on-scroll">
-        <svg viewBox="0 0 600 400" fill="none">
-          <rect width="600" height="400" fill="#F8F1ED"/>
-          <circle cx="300" cy="200" r="120" fill="#D6724A" opacity="0.2"/>
-          <circle cx="300" cy="200" r="80" fill="#9FC3A8" opacity="0.3"/>
-          <path d="M280 180L295 195L320 170" stroke="#4B2E2A" stroke-width="4" stroke-linecap="round"/>
-        </svg>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<footer class="footer" id="contact">
-
-  <div class="container">
-
-    <div class="footer__container">
-
-      <div class="footer__brand">
-        <a href="#" class="footer__logo">
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__container">
+        <a href="#" class="logo">
           <img src="assets/images/logo.png" alt="Sheedoz Logo">
           <span>Sheedoz</span>
         </a>
-        <p class="footer__tagline">Version 1.0</p>
-      </div>
 
-      <div class="footer__section">
-        <h4 class="footer__title">Navigation</h4>
-        <ul class="footer__list">
-          <li><a href="#fonctionnalites" class="footer__link">Fonctionnalités</a></li>
-          <li><a href="#tarifs" class="footer__link">Tarifs</a></li>
-          <li><a href="mailto:contact@sheedoz.app" class="footer__link">Contact</a></li>
-        </ul>
-      </div>
+        <!-- Desktop Navigation -->
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a href="#fonctionnalites" class="nav__link">Fonctionnalités</a></li>
+            <li><a href="#tarifs" class="nav__link">Tarifs</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+            <li><a href="#" class="btn btn--primary">Télécharger</a></li>
+          </ul>
+        </nav>
 
-      <div class="footer__section">
-        <h4 class="footer__title">Informations légales</h4>
-        <ul class="footer__list">
-          <li><a href="legal/cgu.html" class="footer__link">Conditions d'utilisation</a></li>
-          <li><a href="legal/confidentialite.html" class="footer__link">Politique de confidentialité</a></li>
-          <li><a href="legal/cgv.html" class="footer__link">Conditions de vente</a></li>
-          <li><a href="legal/mentions-legales.html" class="footer__link">Mentions légales</a></li>
-          <li><a href="legal/limites-usage.html" class="footer__link">Limites d'usage</a></li>
-          <li><a href="legal/charte-ia.html" class="footer__link">Charte éthique IA</a></li>
-        </ul>
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-
     </div>
 
-    <div class="footer__bottom">
-      <p>© 2026 Sheedoz - Hariny DJEARAMANE • SIREN: 902046390</p>
-      <p><a href="mailto:contact@sheedoz.app">contact@sheedoz.app</a></p>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <button class="mobile-menu__close" aria-label="Fermer le menu">&times;</button>
+      <ul class="mobile-menu__list">
+        <li><a href="#fonctionnalites" class="mobile-menu__link">Fonctionnalités</a></li>
+        <li><a href="#tarifs" class="mobile-menu__link">Tarifs</a></li>
+        <li><a href="#contact" class="mobile-menu__link">Contact</a></li>
+        <li><a href="#" class="btn btn--primary btn--large">Télécharger</a></li>
+      </ul>
     </div>
+  </header>
 
-  </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__container">
+        <div class="hero__content animate-on-scroll">
+          <h1 class="hero__title">Transforme tes objectifs en réalité</h1>
+          <p class="hero__subtitle">
+            Clarifie. Planifie. Passe à l’action.
+          </p>
+          <div class="hero__cta btn-group">
+            <a href="https://apps.apple.com/app/sheedoz" class="btn btn--primary btn--large" id="cta-app-store">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+              </svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.harinydjearamane.sheedoz" class="btn btn--secondary btn--large" id="cta-google-play">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
+              </svg>
+              Google Play
+            </a>
+          </div>
+        </div>
+        <div class="hero__visual animate-on-scroll">
+          <!-- Placeholder for hero illustration -->
+          <svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="400" fill="#F8F1ED"/>
+            <circle cx="300" cy="200" r="120" fill="#D6724A" opacity="0.2"/>
+            <circle cx="300" cy="200" r="80" fill="#9FC3A8" opacity="0.3"/>
+            <path d="M280 180L295 195L320 170" stroke="#4B2E2A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</footer>
+  <!-- Features Section -->
+  <section class="features section" id="fonctionnalites">
+    <div class="container">
+      <h2 class="text-center animate-on-scroll">Des outils pensés pour ta réussite</h2>
+      <p class="text-center text-muted animate-on-scroll">Sheedoz met à ta disposition tout ce dont tu as besoin pour atteindre tes objectifs</p>
 
-<script src="assets/js/main.js" defer></script>
+      <div class="features__grid">
+        <div class="card animate-on-scroll">
+          <svg class="card__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          <h3 class="card__title">Plan d'action personnalisé</h3>
+          <p class="card__description">
+            Grâce à la méthode SMART, transforme tes ambitions en objectifs. Un plan sur mesure qui s'adapte à ta réalité et te guide pas à pas vers la réussite.
+          </p>
+        </div>
+
+        <div class="card animate-on-scroll">
+          <svg class="card__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <h3 class="card__title">Des micro-actions à ta portée</h3>
+          <p class="card__description">
+            Actions uniques, récurrentes et jalons. Chaque étape est conçue pour s'adapter à ton rythme et tes contraintes.
+          </p>
+        </div>
+
+        <div class="card animate-on-scroll">
+          <svg class="card__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <h3 class="card__title">Inspiration quotidienne</h3>
+          <p class="card__description">
+            Reçois chaque jour un contenu motivant adapté pour rester concentrée et inspirée. 
+          </p>
+        </div>
+
+        <div class="card animate-on-scroll">
+          <svg class="card__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+          <h3 class="card__title">Suivi intelligent de ta progression</h3>
+          <p class="card__description">
+            Visualise ta progression avec des statistiques détaillées et des insights personnalisés sur tes habitudes.
+          </p>
+        </div>
+
+        <div class="card animate-on-scroll">
+          <svg class="card__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <h3 class="card__title">Intégration calendrier</h3>
+          <p class="card__description">
+            Synchronise automatiquement tes micro-actions avec ton calendrier pour une organisation sans effort.
+          </p>
+        </div>
+
+        <div class="card animate-on-scroll">
+          <svg class="card__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          <h3 class="card__title">Journal personnel</h3>
+          <p class="card__description">
+            Note tes réflexions, émotions et apprentissages pour mieux évoluer. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Pricing Section -->
+  <section class="pricing section section--alt" id="tarifs">
+    <div class="container">
+      <h2 class="text-center animate-on-scroll">Une formule adaptée à tes besoins</h2>
+      <p class="text-center text-muted animate-on-scroll">Essaie Sheedoz gratuitement pendant 30 jours, puis profite de toutes les fonctionnalités</p>
+
+      <div class="pricing__centered animate-on-scroll" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <div class="pricing-card__price" style="margin-bottom: 2rem; font-weight: 700;">
+          6,99€
+          <span class="pricing-card__price-note" style="font-weight: 700;">par mois • ou 69,99€/an (−17%)</span>
+        </div>
+        <ul class="pricing-card__features" style="display: inline-block; text-align: left; margin-bottom: 2rem;">
+          <li class="pricing-card__feature">3 objectifs simultanés</li>
+          <li class="pricing-card__feature">DailyDoz quotidien</li>
+          <li class="pricing-card__feature">Journal illimité</li>
+          <li class="pricing-card__feature">Analytics complets</li>
+          <li class="pricing-card__feature">Insights personnalisés</li>
+          <li class="pricing-card__feature">Support prioritaire</li>
+        </ul>
+        <div>
+          <a href="#" class="btn btn--primary btn--large">Essai gratuit 30 jours</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="animate-on-scroll">Prête à passer à l'action ?</h2>
+      <p class="cta-section__subtitle animate-on-scroll">
+        Rejoins Sheedoz et transforme tes objectifs en réalité. Télécharge l'application maintenant.
+      </p>
+      <div class="btn-group animate-on-scroll">
+        <a href="https://apps.apple.com/app/sheedoz" class="btn btn--primary btn--large">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          Télécharger sur l'App Store
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.harinydjearamane.sheedoz" class="btn btn--primary btn--large">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
+          </svg>
+          Télécharger sur Google Play
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__container">
+        <!-- Brand -->
+        <div class="footer__brand">
+          <a href="#" class="footer__logo">
+            <img src="assets/images/logo.png" alt="Sheedoz Logo">
+            <span>Sheedoz</span>
+          </a>
+          <p class="footer__tagline">
+            Version 1.O
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="footer__section">
+          <h4 class="footer__title">Navigation</h4>
+          <ul class="footer__list">
+            <li><a href="#fonctionnalites" class="footer__link">Fonctionnalités</a></li>
+            <li><a href="#tarifs" class="footer__link">Tarifs</a></li>
+            <li><a href="mailto:contact@sheedoz.app" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="footer__section">
+          <h4 class="footer__title">Informations légales</h4>
+          <ul class="footer__list">
+            <li><a href="legal/cgu.html" class="footer__link">Conditions d'utilisation</a></li>
+            <li><a href="legal/confidentialite.html" class="footer__link">Politique de confidentialité</a></li>
+            <li><a href="legal/cgv.html" class="footer__link">Conditions de vente</a></li>
+            <li><a href="legal/mentions-legales.html" class="footer__link">Mentions légales</a></li>
+            <li><a href="legal/limites-usage.html" class="footer__link">Limites d'usage</a></li>
+            <li><a href="legal/charte-ia.html" class="footer__link">Charte éthique IA</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          © 2026 Sheedoz - Hariny DJEARAMANE • SIREN: 902046390
+        </p>
+        <p class="footer__contact">
+          <a href="mailto:contact@sheedoz.app">contact@sheedoz.app</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js" defer></script>
 
 </body>
 </html>
