@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devenir testeuse – Sheedoz</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="form-page">
+
+  <!-- Header minimal -->
+  <header class="header" style="position:sticky;top:0;z-index:100;">
+    <div class="container">
+      <div class="header__container">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="Sheedoz Logo">
+          <span>Sheedoz</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="form-page__content">
+    <div class="form-card" id="form-wrapper">
+
+      <!-- Formulaire -->
+      <div id="form-section">
+        <h1 class="form-card__title">Je veux devenir testeuse 🧪</h1>
+        <p class="form-card__subtitle">Aide-nous à construire la meilleure version de Sheedoz. Merci pour ton enthousiasme !</p>
+
+        <form id="testeuse-form" novalidate>
+
+          <!-- Identité -->
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+          </div>
+
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Marie" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Adresse e-mail *</label>
+            <input type="email" id="email" name="email" placeholder="marie@exemple.fr" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Numéro de téléphone *</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="+33 6 00 00 00 00" required>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- Téléphone -->
+          <p class="form-section-title">Ton téléphone</p>
+
+          <div class="form-group">
+            <label>Système d'exploitation *</label>
+            <div class="form-group--radio">
+              <label><input type="radio" name="os" value="iOS" required> iOS (iPhone)</label>
+              <label><input type="radio" name="os" value="Android"> Android</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="modele">Modèle de téléphone *</label>
+            <input type="text" id="modele" name="modele" placeholder="ex : iPhone 15 Pro, Samsung Galaxy S24…" required>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- Expérience -->
+          <p class="form-section-title">Ton expérience avec les apps</p>
+
+          <div class="form-group">
+            <label for="frequence">À quelle fréquence testes-tu des apps ? *</label>
+            <select id="frequence" name="frequence" required>
+              <option value="" disabled selected>Choisis une réponse</option>
+              <option value="jamais">Jamais</option>
+              <option value="parfois">Parfois</option>
+              <option value="souvent">Souvent</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Es-tu OK pour… (coche tout ce qui te convient) *</label>
+            <div class="form-group--checkboxes">
+              <label><input type="checkbox" name="ok_pour" value="signaler_bugs"> Signaler les bugs</label>
+              <label><input type="checkbox" name="ok_pour" value="repondre_questions"> Répondre à des questions</label>
+              <label><input type="checkbox" name="ok_pour" value="tester_mises_a_jour"> Tester des mises à jour</label>
+            </div>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- Motivation -->
+          <p class="form-section-title">Ta motivation</p>
+
+          <div class="form-group">
+            <label for="motivation">Pourquoi tu veux devenir testeuse ? *</label>
+            <textarea id="motivation" name="motivation" placeholder="Dis-nous en quelques lignes ce qui te motive…" required></textarea>
+          </div>
+
+          <!-- Note de contact -->
+          <p class="form-contact-note">
+            Tu as des questions ? Écris-nous à <a href="mailto:contact@sheedoz.app">contact@sheedoz.app</a><br>
+            ou retrouve-nous sur Instagram <a href="https://www.instagram.com/sisteri__" target="_blank" rel="noopener noreferrer">@sisteri__</a>
+          </p>
+
+          <button type="submit" class="btn btn--primary btn--large form-card__submit" id="submit-btn">
+            Envoyer ma candidature
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Confirmation -->
+      <div class="confirmation" id="confirmation">
+        <div class="confirmation__icon">🎉</div>
+        <h2 class="confirmation__title">Merci, tu es dans la liste !</h2>
+        <p class="confirmation__text">
+          On a bien reçu ta candidature de testeuse.<br>
+          On reviendra vers toi très vite avec les prochaines étapes. En attendant, suis nos aventures !
+        </p>
+        <div class="confirmation__social">
+          <a href="https://www.instagram.com/sisteri__?igsh=MWNxcGF1Z3VqdGI0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
+            📸 Suivre @sisteri__ sur Instagram
+          </a>
+          <a href="https://www.tiktok.com/@sisteri__" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--large">
+            🎵 Suivre @sisteri__ sur TikTok
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer minimal -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 Sheedoz – Hariny DJEARAMANE</p>
+        <p class="footer__contact"><a href="mailto:contact@sheedoz.app">contact@sheedoz.app</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var APPS_SCRIPT_URL_TESTEUSES = 'https://script.google.com/macros/s/AKfycbzWrt2fnCVBwOspCQ2-wBnr7mDz-yYx8FKxbakBtAJwyZvdH8neca095F1jrs2uB3r72Q/exec';
+
+    document.getElementById('testeuse-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var form = e.target;
+      var btn = document.getElementById('submit-btn');
+
+      // Validation basique
+      var nom = form.nom.value.trim();
+      var prenom = form.prenom.value.trim();
+      var email = form.email.value.trim();
+      var telephone = form.telephone.value.trim();
+      var os = form.querySelector('input[name="os"]:checked');
+      var modele = form.modele.value.trim();
+      var frequence = form.frequence.value;
+      var motivation = form.motivation.value.trim();
+
+      if (!nom || !prenom || !email || !telephone || !os || !modele || !frequence || !motivation) {
+        alert('Merci de remplir tous les champs obligatoires (*).');
+        return;
+      }
+
+      var okPour = Array.from(form.querySelectorAll('input[name="ok_pour"]:checked')).map(function(cb) { return cb.value; });
+
+      var payload = {
+        nom: nom,
+        prenom: prenom,
+        email: email,
+        telephone: telephone,
+        os: os.value,
+        modele: modele,
+        frequence: frequence,
+        ok_pour: okPour.join(', '),
+        motivation: motivation
+      };
+
+      btn.textContent = 'Envoi en cours…';
+      btn.disabled = true;
+
+      fetch(APPS_SCRIPT_URL_TESTEUSES, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function() {
+        document.getElementById('form-section').style.display = 'none';
+        document.getElementById('confirmation').style.display = 'block';
+      })
+      .catch(function() {
+        btn.textContent = 'Envoyer ma candidature';
+        btn.disabled = false;
+        alert('Une erreur est survenue. Réessaie ou contacte-nous à contact@sheedoz.app');
+      });
+    });
+  </script>
+
+</body>
+</html>

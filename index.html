@@ -9,17 +9,17 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sheedoz.app/">
+  <meta property="og:url" content="https://www.sheedoz.app/">
   <meta property="og:title" content="Sheedoz - Transforme tes objectifs en réalité">
   <meta property="og:description" content="L'app d'accompagnement personnalisé avec IA pour atteindre tes objectifs.">
-  <meta property="og:image" content="https://sheedoz.app/assets/images/logo.png">
+  <meta property="og:image" content="https://www.sheedoz.app/assets/images/logo.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://sheedoz.app/">
+  <meta property="twitter:url" content="https://www.sheedoz.app/">
   <meta property="twitter:title" content="Sheedoz - Transforme tes objectifs en réalité">
   <meta property="twitter:description" content="L'app d'accompagnement personnalisé avec IA pour atteindre tes objectifs.">
-  <meta property="twitter:image" content="https://sheedoz.app/assets/images/logo.png">
+  <meta property="twitter:image" content="https://www.sheedoz.app/assets/images/logo.png">
 
   <title>Sheedoz - Transforme tes objectifs en réalité</title>
 
@@ -83,7 +83,7 @@
         <div class="hero__content animate-on-scroll">
           <h1 class="hero__title">Transforme tes objectifs en réalité</h1>
           <p class="hero__subtitle">
-            Clarifie. Planifie. Passe à l'action.
+            Clarifie. Planifie. Passe à l’action.
           </p>
           <div class="hero__cta btn-group">
             <a href="https://apps.apple.com/app/sheedoz" class="btn btn--primary btn--large" id="cta-app-store">
@@ -99,6 +99,15 @@
               Google Play
             </a>
           </div>
+        </div>
+        <div class="hero__visual animate-on-scroll">
+          <!-- Placeholder for hero illustration -->
+          <svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="400" fill="#F8F1ED"/>
+            <circle cx="300" cy="200" r="120" fill="#D6724A" opacity="0.2"/>
+            <circle cx="300" cy="200" r="80" fill="#9FC3A8" opacity="0.3"/>
+            <path d="M280 180L295 195L320 170" stroke="#4B2E2A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
       </div>
     </div>
@@ -137,7 +146,7 @@
           </svg>
           <h3 class="card__title">Inspiration quotidienne</h3>
           <p class="card__description">
-            Reçois chaque jour un contenu motivant adapté pour rester concentrée et inspirée.
+            Reçois chaque jour un contenu motivant adapté pour rester concentrée et inspirée. 
           </p>
         </div>
 
@@ -167,12 +176,13 @@
           </svg>
           <h3 class="card__title">Journal personnel</h3>
           <p class="card__description">
-            Note tes réflexions, émotions et apprentissages pour mieux évoluer.
+            Note tes réflexions, émotions et apprentissages pour mieux évoluer. 
           </p>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Pricing Section -->
   <section class="pricing section section--alt" id="tarifs">
@@ -195,6 +205,23 @@
         </ul>
         <div>
           <a href="#" class="btn btn--primary btn--large">Essai gratuit 30 jours</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist Section -->
+  <section class="waitlist-section" id="waitlist">
+    <div class="container">
+      <h2 class="waitlist-section__title animate-on-scroll">L'app arrive bientôt 🌸</h2>
+      <p class="waitlist-section__subtitle animate-on-scroll">Rejoins la communauté Sheedoz avant tout le monde — deviens testeuse ou sois la première informée de la sortie.</p>
+      <div class="animate-on-scroll">
+        <button class="btn btn--primary btn--large" id="waitlist-trigger" onclick="toggleWaitlistButtons()">
+          Je m'inscris à la waitlist
+        </button>
+        <div class="waitlist-section__sub-buttons" id="waitlist-sub-buttons" style="display:none;">
+          <a href="waitlist-testeuse.html" class="btn btn--primary btn--large">Je veux devenir testeuse</a>
+          <a href="waitlist-alerte.html" class="btn btn--secondary btn--large">Je veux être alertée à la sortie de l'app</a>
         </div>
       </div>
     </div>
@@ -235,7 +262,7 @@
             <span>Sheedoz</span>
           </a>
           <p class="footer__tagline">
-            Version 1.0
+            Version 1.O
           </p>
         </div>
 
@@ -253,12 +280,12 @@
         <div class="footer__section">
           <h4 class="footer__title">Informations légales</h4>
           <ul class="footer__list">
-            <li><a href="https://sheedoz.app/legal/cgu.html" class="footer__link">Conditions d'utilisation</a></li>
-            <li><a href="https://sheedoz.app/legal/confidentialite.html" class="footer__link" rel="noopener">Politique de confidentialité</a></li>
-            <li><a href="https://sheedoz.app/legal/cgv.html" class="footer__link">Conditions de vente</a></li>
-            <li><a href="https://sheedoz.app/legal/mentions-legales.html" class="footer__link">Mentions légales</a></li>
-            <li><a href="https://sheedoz.app/legal/limites-usage.html" class="footer__link">Limites d'usage</a></li>
-            <li><a href="https://sheedoz.app/legal/charte-ia.html" class="footer__link">Charte éthique IA</a></li>
+            <li><a href="legal/cgu.html" class="footer__link">Conditions d'utilisation</a></li>
+            <li><a href="legal/confidentialite.html" class="footer__link">Politique de confidentialité</a></li>
+            <li><a href="legal/cgv.html" class="footer__link">Conditions de vente</a></li>
+            <li><a href="legal/mentions-legales.html" class="footer__link">Mentions légales</a></li>
+            <li><a href="legal/limites-usage.html" class="footer__link">Limites d'usage</a></li>
+            <li><a href="legal/charte-ia.html" class="footer__link">Charte éthique IA</a></li>
           </ul>
         </div>
       </div>
@@ -277,6 +304,19 @@
 
   <!-- JavaScript -->
   <script src="assets/js/main.js" defer></script>
+  <script>
+    function toggleWaitlistButtons() {
+      var sub = document.getElementById('waitlist-sub-buttons');
+      var btn = document.getElementById('waitlist-trigger');
+      if (sub.style.display === 'none') {
+        sub.style.display = 'flex';
+        btn.textContent = 'Fermer ✕';
+      } else {
+        sub.style.display = 'none';
+        btn.textContent = 'Je m\'inscris à la waitlist';
+      }
+    }
+  </script>
 
 </body>
 </html>

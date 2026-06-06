@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Être alertée – Sheedoz</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="form-page">
+
+  <!-- Header minimal -->
+  <header class="header" style="position:sticky;top:0;z-index:100;">
+    <div class="container">
+      <div class="header__container">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="Sheedoz Logo">
+          <span>Sheedoz</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="form-page__content">
+    <div class="form-card" id="form-wrapper">
+
+      <!-- Formulaire -->
+      <div id="form-section">
+        <h1 class="form-card__title">Je veux être alertée 🔔</h1>
+        <p class="form-card__subtitle">Laisse-nous tes coordonnées et tu seras la première à savoir quand Sheedoz est disponible !</p>
+
+        <form id="alerte-form" novalidate>
+
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+          </div>
+
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Marie" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Numéro de téléphone *</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="+33 6 00 00 00 00" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Adresse e-mail *</label>
+            <input type="email" id="email" name="email" placeholder="marie@exemple.fr" required>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- Consentement SMS -->
+          <div class="form-checkbox" id="sms-checkbox-wrapper">
+            <input type="checkbox" id="sms-consent" name="sms_consent" value="oui">
+            <label for="sms-consent">J'accepte d'être informée de la sortie de l'app par SMS</label>
+          </div>
+
+          <!-- Champ alternatif si pas de SMS -->
+          <div id="other-contact-field" style="display:none;">
+            <div class="form-group">
+              <label for="autre-contact">Comment souhaites-tu être contactée ? *</label>
+              <input type="text" id="autre-contact" name="autre_contact" placeholder="ex : par e-mail, sur Instagram @monpseudo…">
+            </div>
+          </div>
+
+          <!-- Note de contact -->
+          <p class="form-contact-note" style="margin-top: var(--spacing-xl);">
+            Tu as des questions ? Écris-nous à <a href="mailto:contact@sheedoz.app">contact@sheedoz.app</a><br>
+            ou retrouve-nous sur Instagram <a href="https://www.instagram.com/sisteri__" target="_blank" rel="noopener noreferrer">@sisteri__</a>
+          </p>
+
+          <button type="submit" class="btn btn--primary btn--large form-card__submit" id="submit-btn">
+            Je m'inscris
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Confirmation -->
+      <div class="confirmation" id="confirmation">
+        <div class="confirmation__icon">✨</div>
+        <h2 class="confirmation__title">C'est noté !</h2>
+        <p class="confirmation__text">
+          Tu seras parmi les premières à savoir quand Sheedoz sera disponible.<br>
+          En attendant, suis nos aventures sur les réseaux !
+        </p>
+        <div class="confirmation__social">
+          <a href="https://www.instagram.com/sisteri__?igsh=MWNxcGF1Z3VqdGI0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
+            📸 Suivre @sisteri__ sur Instagram
+          </a>
+          <a href="https://www.tiktok.com/@sisteri__" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--large">
+            🎵 Suivre @sisteri__ sur TikTok
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer minimal -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 Sheedoz – Hariny DJEARAMANE</p>
+        <p class="footer__contact"><a href="mailto:contact@sheedoz.app">contact@sheedoz.app</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var APPS_SCRIPT_URL_ALERTES = 'https://script.google.com/macros/s/AKfycbw37YgR7zEd_3AFDIdzAMMDhsOum-vp8pgVJwmE9oM_2QWTThhDDcYJJRs3rYZMnd0/exec';
+
+    // Afficher/masquer le champ alternatif selon la checkbox SMS
+    document.getElementById('sms-consent').addEventListener('change', function() {
+      var otherField = document.getElementById('other-contact-field');
+      otherField.style.display = this.checked ? 'none' : 'block';
+    });
+
+    // Au chargement, si la checkbox n'est pas cochée, afficher le champ
+    document.addEventListener('DOMContentLoaded', function() {
+      var smsCheckbox = document.getElementById('sms-consent');
+      var otherField = document.getElementById('other-contact-field');
+      if (!smsCheckbox.checked) {
+        otherField.style.display = 'block';
+      }
+    });
+
+    document.getElementById('alerte-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var form = e.target;
+      var btn = document.getElementById('submit-btn');
+
+      var nom = form.nom.value.trim();
+      var prenom = form.prenom.value.trim();
+      var telephone = form.telephone.value.trim();
+      var email = form.email.value.trim();
+      var smsConsent = form.sms_consent.checked;
+      var autreContact = form.autre_contact ? form.autre_contact.value.trim() : '';
+
+      if (!nom || !prenom || !telephone || !email) {
+        alert('Merci de remplir tous les champs obligatoires (*).');
+        return;
+      }
+
+      if (!smsConsent && !autreContact) {
+        alert('Merci d\'indiquer comment tu souhaites être contactée si tu ne souhaites pas recevoir de SMS.');
+        return;
+      }
+
+      var payload = {
+        nom: nom,
+        prenom: prenom,
+        telephone: telephone,
+        email: email,
+        sms_consent: smsConsent ? 'Oui' : 'Non',
+        autre_contact: autreContact
+      };
+
+      btn.textContent = 'Envoi en cours…';
+      btn.disabled = true;
+
+      fetch(APPS_SCRIPT_URL_ALERTES, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function() {
+        document.getElementById('form-section').style.display = 'none';
+        document.getElementById('confirmation').style.display = 'block';
+      })
+      .catch(function() {
+        btn.textContent = 'Je m\'inscris';
+        btn.disabled = false;
+        alert('Une erreur est survenue. Réessaie ou contacte-nous à contact@sheedoz.app');
+      });
+    });
+  </script>
+
+</body>
+</html>
