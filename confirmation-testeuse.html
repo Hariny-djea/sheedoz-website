@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidature envoyée – Sheedoz</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(160deg, var(--color-primary-light) 0%, var(--color-sage-pastel) 60%, var(--color-background) 100%);
+      font-family: var(--font-body);
+    }
+
+    .page-header {
+      padding: var(--spacing-lg) var(--spacing-xl);
+    }
+    .page-header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .page-header .logo img { height: 32px; }
+    .page-header .logo span {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      color: var(--color-text);
+      font-weight: 700;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: var(--spacing-3xl) var(--spacing-2xl);
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.08);
+    }
+
+    .card__icon {
+      font-size: 72px;
+      line-height: 1;
+      margin-bottom: var(--spacing-lg);
+      display: block;
+    }
+
+    .card__badge {
+      display: inline-block;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: var(--spacing-lg);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-md);
+      line-height: 1.2;
+    }
+
+    .card__text {
+      color: var(--color-text-light);
+      font-size: var(--text-md);
+      line-height: 1.7;
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .card__divider {
+      width: 48px;
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: 2px;
+      margin: 0 auto var(--spacing-xl);
+      opacity: 0.4;
+    }
+
+    .card__social-label {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .card__social {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    @media (min-width: 480px) {
+      .card__social { flex-direction: row; justify-content: center; }
+    }
+
+    .card__home {
+      margin-top: var(--spacing-xl);
+      display: inline-block;
+      font-size: var(--text-sm);
+      color: var(--color-text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .card__home:hover { color: var(--color-primary); }
+
+    footer {
+      padding: var(--spacing-lg) var(--spacing-xl);
+      text-align: center;
+    }
+    footer p {
+      font-size: var(--text-xs);
+      color: var(--color-text-light);
+    }
+    footer a { color: var(--color-primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.png" alt="Sheedoz">
+      <span>Sheedoz</span>
+    </a>
+  </header>
+
+  <main>
+    <div class="card">
+      <span class="card__icon">🎉</span>
+      <span class="card__badge">App offerte</span>
+      <h1 class="card__title">Ta candidature est envoyée !</h1>
+      <p class="card__text">
+        On a bien reçu ta demande pour devenir testeuse.<br>
+        On revient vers toi très vite — merci pour ta confiance !
+      </p>
+
+      <div class="card__divider"></div>
+
+      <p class="card__social-label">En attendant, suis l'aventure</p>
+      <div class="card__social">
+        <a href="https://www.instagram.com/sisteri__?igsh=MWNxcGF1Z3VqdGI0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
+          📸 Instagram
+        </a>
+        <a href="https://www.tiktok.com/@sisteri__" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--large">
+          🎵 TikTok
+        </a>
+      </div>
+
+      <a href="index.html" class="card__home">← Retour à l'accueil</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Sheedoz – <a href="mailto:contact@sheedoz.app">contact@sheedoz.app</a></p>
+  </footer>
+
+</body>
+</html>

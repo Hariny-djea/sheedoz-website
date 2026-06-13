@@ -299,7 +299,7 @@
 
   <!-- Hero -->
   <div class="form-hero">
-    <a href="waitlist.html" class="form-hero__back">← Retour</a>
+    <a href="index.html" class="form-hero__back">← Retour</a>
     <span class="form-hero__emoji">🧪</span>
     <span class="form-hero__badge">App offerte</span>
     <h1 class="form-hero__title">Je veux devenir testeuse</h1>
@@ -446,10 +446,10 @@
     </p>
     <div class="confirmation__social">
       <a href="https://www.instagram.com/sisteri__?igsh=MWNxcGF1Z3VqdGI0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
-        📸 @sisteri__ sur Instagram
+        📸 Sur Instagram
       </a>
       <a href="https://www.tiktok.com/@sisteri__" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--large">
-        🎵 @sisteri__ sur TikTok
+        🎵 Sur TikTok
       </a>
     </div>
   </div>
@@ -501,9 +501,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       }).then(function() {
-        document.getElementById('form-container').style.display = 'none';
-        document.getElementById('confirmation').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.location.href = 'confirmation-testeuse.html';
       }).catch(function() {
         btn.textContent = 'Envoyer ma candidature';
         btn.disabled = false;
