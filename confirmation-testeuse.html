@@ -9,27 +9,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: linear-gradient(160deg, var(--color-primary-light) 0%, var(--color-sage-pastel) 60%, var(--color-background) 100%);
+      background: linear-gradient(
+        160deg,
+        var(--color-primary-light) 0%,
+        var(--color-sage-pastel) 60%,
+        var(--color-background) 100%
+      );
       font-family: var(--font-body);
     }
 
     .page-header {
       padding: var(--spacing-lg) var(--spacing-xl);
     }
+
     .page-header .logo {
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
     }
-    .page-header .logo img { height: 32px; }
+
+    .page-header .logo img {
+      height: 32px;
+    }
+
     .page-header .logo span {
       font-family: var(--font-heading);
       font-size: var(--text-xl);
@@ -52,7 +67,7 @@
       max-width: 560px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 8px 48px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 48px rgba(0, 0, 0, 0.08);
     }
 
     .card__icon {
@@ -115,7 +130,10 @@
     }
 
     @media (min-width: 480px) {
-      .card__social { flex-direction: row; justify-content: center; }
+      .card__social {
+        flex-direction: row;
+        justify-content: center;
+      }
     }
 
     .card__home {
@@ -126,19 +144,28 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .card__home:hover { color: var(--color-primary); }
+
+    .card__home:hover {
+      color: var(--color-primary);
+    }
 
     footer {
       padding: var(--spacing-lg) var(--spacing-xl);
       text-align: center;
     }
+
     footer p {
       font-size: var(--text-xs);
       color: var(--color-text-light);
     }
-    footer a { color: var(--color-primary); text-decoration: none; }
+
+    footer a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
   </style>
 </head>
+
 <body>
 
   <header class="page-header">
@@ -151,8 +178,13 @@
   <main>
     <div class="card">
       <span class="card__icon">🎉</span>
+
       <span class="card__badge">App offerte</span>
-      <h1 class="card__title">Ta candidature est envoyée !</h1>
+
+      <h1 class="card__title">
+        Ta candidature est envoyée !
+      </h1>
+
       <p class="card__text">
         On a bien reçu ta demande pour devenir testeuse.<br>
         On revient vers toi très vite — merci pour ta confiance !
@@ -160,22 +192,43 @@
 
       <div class="card__divider"></div>
 
-      <p class="card__social-label">En attendant, suis l'aventure</p>
+      <p class="card__social-label">
+        En attendant, suis l'aventure
+      </p>
+
       <div class="card__social">
-        <a href="https://www.instagram.com/sisteri__?igsh=MWNxcGF1Z3VqdGI0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
-          📸 Instagram
+        <a
+          href="https://www.instagram.com/hariny.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--primary btn--large"
+        >
+          📸 @hariny.co
         </a>
-        <a href="https://www.tiktok.com/@sisteri__" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--large">
-          🎵 TikTok
+
+        <a
+          href="https://www.tiktok.com/@hariny.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--secondary btn--large"
+        >
+          🎵 @hariny.co
         </a>
       </div>
 
-      <a href="index.html" class="card__home">← Retour à l'accueil</a>
+      <a href="index.html" class="card__home">
+        ← Retour à l'accueil
+      </a>
     </div>
   </main>
 
   <footer>
-    <p>© 2026 Sheedoz – <a href="mailto:contact@sheedoz.app">contact@sheedoz.app</a></p>
+    <p>
+      © 2026 Sheedoz –
+      <a href="mailto:contact@sheedoz.app">
+        contact@sheedoz.app
+      </a>
+    </p>
   </footer>
 
 </body>
