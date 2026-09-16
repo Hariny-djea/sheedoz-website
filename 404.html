@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Sheedoz - Lien Creator</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #f8f1ed;
+      --brown: #4b2e2a;
+      --terracotta: #d6724a;
+      --text: #6b5750;
+      --border: rgba(214, 114, 74, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      min-height: 100%;
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+    }
+
+    main {
+      width: 100%;
+      max-width: 480px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: #fff;
+      padding: 28px;
+      box-shadow: 0 14px 32px rgba(75, 46, 42, 0.12);
+    }
+
+    .brand {
+      margin: 0 0 18px;
+      color: var(--terracotta);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: var(--brown);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 8vw, 38px);
+      line-height: 1.08;
+    }
+
+    p {
+      margin: 0 0 24px;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    a, button {
+      min-height: 48px;
+      border-radius: 8px;
+      border: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--terracotta);
+      color: #fff;
+    }
+
+    .secondary {
+      border: 1px solid rgba(75, 46, 42, 0.18);
+      background: #fff;
+      color: var(--brown);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="brand">Sheedoz</p>
+    <h1 id="title">Ouverture de ton espace</h1>
+    <p id="message">On prépare le lien Creator et on ouvre Sheedoz.</p>
+    <div class="actions" id="actions" hidden>
+      <button class="primary" type="button" id="open-app">Ouvrir Sheedoz</button>
+      <a class="secondary" id="install-app" href="https://apps.apple.com/fr/search?term=Sheedoz">Installer Sheedoz</a>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var SUPABASE_URL = 'https://khbnsidleqhuobcnmxte.supabase.co';
+      var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtoYm5zaWRsZXFodW9iY25teHRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUxNzMyNTEsImV4cCI6MjA2MDc0OTI1MX0.h5R_bTQKHUZfJp2m4gab0GLQjk-ZWxPtQBNE4jloz-E';
+      var PENDING_KEY = 'sheedoz_growth_attribution_pending_v1';
+
+      var title = document.getElementById('title');
+      var message = document.getElementById('message');
+      var actions = document.getElementById('actions');
+      var openApp = document.getElementById('open-app');
+
+      function sanitizeCreatorSlug(value) {
+        var normalized = String(value || '')
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/^@+/, '')
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, '')
+          .replace(/-{2,}/g, '-')
+          .slice(0, 64);
+
+        return normalized.length >= 3 ? normalized : '';
+      }
+
+      function readSlug() {
+        var match = window.location.pathname.match(/^\/c\/([^/?#]+)/);
+        return match && match[1] ? sanitizeCreatorSlug(decodeURIComponent(match[1])) : '';
+      }
+
+      function buildDeepLink(slug, clickId) {
+        var params = new URLSearchParams({ slug: slug });
+        if (clickId) params.set('click_id', clickId);
+        return 'sheedoz://creator?' + params.toString();
+      }
+
+      function showActions(deepLink) {
+        actions.hidden = false;
+        openApp.onclick = function () {
+          window.location.assign(deepLink);
+        };
+      }
+
+      function storePending(slug, clickId) {
+        try {
+          window.localStorage.setItem(PENDING_KEY, JSON.stringify({
+            slug: slug,
+            clickId: clickId || null,
+            createdAt: new Date().toISOString()
+          }));
+        } catch (error) {
+          // localStorage can be unavailable in private browsing; the deep link still carries the attribution.
+        }
+      }
+
+      async function recordClick(slug) {
+        var url = new URL(SUPABASE_URL.replace(/\/+$/, '') + '/functions/v1/growth-click');
+        url.searchParams.set('slug', slug);
+        url.searchParams.set('format', 'json');
+
+        var response = await fetch(url.toString(), {
+          method: 'POST',
+          headers: {
+            apikey: SUPABASE_ANON,
+            authorization: 'Bearer ' + SUPABASE_ANON,
+            'content-type': 'application/json',
+            accept: 'application/json'
+          },
+          body: JSON.stringify({ destination: 'app' })
+        });
+
+        var data = await response.json().catch(function () { return null; });
+        if (!response.ok || !data || !data.ok) {
+          throw new Error((data && data.error) || 'Creator link unavailable');
+        }
+        return data;
+      }
+
+      async function run() {
+        var slug = readSlug();
+        if (!slug) {
+          title.textContent = 'Page introuvable';
+          message.textContent = "Ce lien Sheedoz n'existe pas ou a expiré.";
+          actions.hidden = false;
+          openApp.textContent = 'Retourner sur Sheedoz';
+          openApp.onclick = function () { window.location.assign('/'); };
+          return;
+        }
+
+        var deepLink = buildDeepLink(slug);
+        try {
+          var result = await recordClick(slug);
+          deepLink = result.appUrl || buildDeepLink(slug, result.clickId);
+          storePending(slug, result.clickId);
+          window.location.assign(deepLink);
+          window.setTimeout(function () {
+            message.textContent = "Si Sheedoz ne s'est pas ouverte automatiquement, tu peux continuer ici.";
+            showActions(deepLink);
+          }, 1200);
+        } catch (error) {
+          title.textContent = 'Lien Creator indisponible';
+          message.textContent = "Ce lien Creator est introuvable ou désactivé.";
+          showActions(deepLink);
+        }
+      }
+
+      run();
+    })();
+  </script>
+</body>
+</html>
