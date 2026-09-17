@@ -136,52 +136,19 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => {
 });
 
 // ==========================================
-// 5. PLATFORM DETECTION FOR SMART CTA BUTTONS
+// 5. APP STORE CTA LINKS
 // ==========================================
 function detectPlatform() {
-  const userAgent = navigator.userAgent.toLowerCase();
-  const isIOS = /iphone|ipad|ipod/.test(userAgent);
-  const isAndroid = /android/.test(userAgent);
-
-  // App Store and Google Play URLs (update these with real URLs when apps are published)
+  // App Store URL (update with real URL when the app is published)
   const appStoreURL = 'https://apps.apple.com/app/sheedoz'; // Add real App ID
-  const googlePlayURL = 'https://play.google.com/store/apps/details?id=com.harinydjearamane.sheedoz';
 
-  // Get all CTA buttons
+  // Get all App Store CTA buttons
   const appStoreBtns = document.querySelectorAll('#cta-app-store, [href*="apps.apple.com"]');
-  const googlePlayBtns = document.querySelectorAll('#cta-google-play, [href*="play.google.com"]');
-
-  if (isIOS) {
-    // On iOS devices, prioritize App Store button
-    appStoreBtns.forEach(btn => {
-      btn.href = appStoreURL;
-      btn.style.order = '1'; // Show first
-    });
-    googlePlayBtns.forEach(btn => {
-      btn.style.order = '2'; // Show second
-    });
-  } else if (isAndroid) {
-    // On Android devices, prioritize Google Play button
-    googlePlayBtns.forEach(btn => {
-      btn.href = googlePlayURL;
-      btn.style.order = '1'; // Show first
-    });
-    appStoreBtns.forEach(btn => {
-      btn.style.order = '2'; // Show second
-    });
-  }
 
   // Update all App Store links
   appStoreBtns.forEach(btn => {
     if (!btn.href || btn.href.includes('#')) {
       btn.href = appStoreURL;
-    }
-  });
-
-  // Update all Google Play links
-  googlePlayBtns.forEach(btn => {
-    if (!btn.href || btn.href.includes('#')) {
-      btn.href = googlePlayURL;
     }
   });
 }
@@ -272,8 +239,7 @@ function trackCTAClick(buttonId, platform) {
 document.querySelectorAll('.btn--primary, .btn--secondary').forEach(btn => {
   btn.addEventListener('click', (e) => {
     const buttonText = btn.textContent.trim();
-    const platform = buttonText.includes('App Store') ? 'iOS' :
-                     buttonText.includes('Google Play') ? 'Android' : 'Web';
+    const platform = buttonText.includes('App Store') ? 'iOS' : 'Web';
     trackCTAClick(btn.id || 'unknown', platform);
   });
 });

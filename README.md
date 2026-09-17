@@ -141,7 +141,7 @@ DNS should auto-configure when you create the subdomain, but verify:
 3. Test all links:
    - Navigation links
    - Legal pages footer links
-   - App Store/Google Play buttons
+   - App Store button
 4. Test mobile responsiveness (Chrome DevTools)
 
 ## 📝 Pre-Launch Checklist
@@ -262,21 +262,17 @@ Sitemap: https://www.sheedoz.app/sitemap.xml
 
 ## 🔗 Important URLs to Update
 
-### App Store & Google Play Links
+### App Store Link
 
-Update these once apps are published:
+Update this once the app is published:
 
 **iOS App Store:**
 - Current: `https://apps.apple.com/app/sheedoz`
 - Update to: `https://apps.apple.com/app/sheedoz/[YOUR_APP_ID]`
 
-**Google Play:**
-- Current: `https://play.google.com/store/apps/details?id=com.harinydjearamane.sheedoz`
-- Verify package ID matches actual app
-
 ### Files to Update:
-1. `index.html` - All CTA buttons (lines with `href="https://apps.apple.com"` or `href="https://play.google.com"`)
-2. `assets/js/main.js` - `appStoreURL` and `googlePlayURL` constants (around line 150)
+1. `index.html` - All CTA buttons (lines with `href="https://apps.apple.com"`)
+2. `assets/js/main.js` - `appStoreURL` constant (around line 145)
 
 ## 📊 Analytics Setup (Optional)
 
