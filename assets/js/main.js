@@ -140,7 +140,7 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => {
 // ==========================================
 function detectPlatform() {
   // App Store URL (update with real URL when the app is published)
-  const appStoreURL = 'https://apps.apple.com/app/sheedoz'; // Add real App ID
+  const appStoreURL = 'https://apps.apple.com/fr/app/sheedoz/id6760241820';
 
   // Get all App Store CTA buttons
   const appStoreBtns = document.querySelectorAll('#cta-app-store, [href*="apps.apple.com"]');
