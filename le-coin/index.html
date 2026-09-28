@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le Coin, la newsletter éditoriale hebdomadaire de Sheedoz : psychologie, méthodes, outils, réflexions et ressources.">
+  <meta name="author" content="Hariny DJEARAMANE">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sheedoz.app/le-coin/">
+  <meta property="og:title" content="Le Coin - La newsletter de Sheedoz">
+  <meta property="og:description" content="Un rendez-vous hebdomadaire pour prendre le temps d'aller plus loin.">
+  <meta property="og:image" content="https://www.sheedoz.app/assets/images/logo.png">
+
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://www.sheedoz.app/le-coin/">
+  <meta property="twitter:title" content="Le Coin - La newsletter de Sheedoz">
+  <meta property="twitter:description" content="Psychologie, méthodes, outils, réflexions et ressources pour avancer plus intelligemment.">
+  <meta property="twitter:image" content="https://www.sheedoz.app/assets/images/logo.png">
+
+  <title>Le Coin - Newsletter Sheedoz</title>
+
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <style>
+    body {
+      background: #F8F1ED;
+      color: #4B2E2A;
+    }
+
+    .coin-page {
+      min-height: 100vh;
+      padding: 24px 0 56px;
+    }
+
+    .coin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .coin-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #4B2E2A;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .coin-logo img {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+    }
+
+    .coin-kicker {
+      color: #D6724A;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .coin-layout {
+      display: grid;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .coin-copy {
+      max-width: 680px;
+    }
+
+    .coin-eyebrow {
+      color: #D6724A;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .coin-title {
+      color: #4B2E2A;
+      font-family: var(--font-heading);
+      font-size: clamp(42px, 12vw, 68px);
+      letter-spacing: 0;
+      line-height: 1.02;
+      margin-bottom: 26px;
+    }
+
+    .coin-subtitle {
+      color: rgba(75, 46, 42, 0.86);
+      font-size: clamp(19px, 5vw, 24px);
+      line-height: 1.45;
+      margin-bottom: 18px;
+    }
+
+    .coin-body {
+      color: rgba(75, 46, 42, 0.74);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 620px;
+    }
+
+    .coin-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .coin-list__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: rgba(75, 46, 42, 0.82);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .coin-list__check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: rgba(168, 185, 163, 0.36);
+      color: #4B2E2A;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    .coin-card {
+      width: 100%;
+      max-width: 440px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(75, 46, 42, 0.1);
+      border-radius: 28px;
+      box-shadow: 0 20px 46px rgba(75, 46, 42, 0.12);
+      justify-self: center;
+      overflow: hidden;
+      padding: 24px;
+    }
+
+    .coin-form {
+      display: grid;
+      gap: 20px;
+    }
+
+    .coin-label {
+      display: block;
+      color: #4B2E2A;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .coin-input {
+      width: 100%;
+      min-height: 52px;
+      border: 1px solid rgba(75, 46, 42, 0.2);
+      border-radius: 16px;
+      background: #FFFFFF;
+      color: #4B2E2A;
+      font-family: var(--font-body);
+      font-size: 15px;
+      outline: none;
+      padding: 0 14px;
+    }
+
+    .coin-input:focus {
+      border-color: #D6724A;
+      box-shadow: 0 0 0 3px rgba(214, 114, 74, 0.14);
+    }
+
+    .coin-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .coin-checkbox {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: #D6724A;
+      flex: 0 0 18px;
+    }
+
+    .coin-consent span {
+      color: #4B2E2A;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .coin-privacy {
+      color: rgba(75, 46, 42, 0.68);
+      font-size: 12px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .coin-privacy a {
+      color: #D6724A;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .coin-button {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      border-radius: 16px;
+      background: #D6724A;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .coin-button:not(:disabled):hover {
+      background: #CE6A3E;
+      transform: translateY(-1px);
+    }
+
+    .coin-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    .coin-error,
+    .coin-alert {
+      color: #B42318;
+      font-size: 13px;
+      line-height: 1.45;
+      margin: 8px 0 0;
+    }
+
+    .coin-alert {
+      background: #FDE2E2;
+      border: 1px solid rgba(168, 68, 50, 0.25);
+      border-radius: 16px;
+      margin: 0;
+      padding: 12px;
+    }
+
+    .coin-success {
+      display: none;
+      padding: 18px 0;
+    }
+
+    .coin-success__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: rgba(168, 185, 163, 0.36);
+      color: #4B2E2A;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .coin-success h2 {
+      color: #4B2E2A;
+      font-family: var(--font-heading);
+      font-size: 32px;
+      letter-spacing: 0;
+      line-height: 1.22;
+      margin-bottom: 16px;
+    }
+
+    .coin-success p {
+      color: rgba(75, 46, 42, 0.74);
+      font-size: 15px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .coin-honeypot {
+      display: none;
+    }
+
+    @media (min-width: 900px) {
+      .coin-page {
+        padding-top: 28px;
+      }
+
+      .coin-layout {
+        grid-template-columns: minmax(0, 1fr) 440px;
+        gap: 56px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .coin-header {
+        margin-bottom: 34px;
+      }
+
+      .coin-card {
+        border-radius: 24px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="coin-page">
+    <div class="container">
+      <header class="coin-header">
+        <a class="coin-logo" href="../">
+          <img src="../assets/images/logo.png" alt="Sheedoz">
+          <span>Sheedoz</span>
+        </a>
+        <span class="coin-kicker">Newsletter</span>
+      </header>
+
+      <section class="coin-layout" aria-labelledby="coin-title">
+        <div class="coin-copy">
+          <p class="coin-eyebrow">Le rendez-vous éditorial de Sheedoz</p>
+          <h1 class="coin-title" id="coin-title">Bienvenue dans Le Coin 🧡☕️</h1>
+          <p class="coin-subtitle">Un rendez-vous hebdomadaire pour prendre le temps d’aller plus loin.</p>
+          <p class="coin-body">
+            Psychologie, méthodes, outils, réflexions et ressources pour t’aider à avancer plus intelligemment vers ce que tu veux vraiment.
+          </p>
+
+          <ul class="coin-list" aria-label="Ce que tu recevras dans Le Coin">
+            <li class="coin-list__item"><span class="coin-list__check">✓</span><span>réflexions plus approfondies</span></li>
+            <li class="coin-list__item"><span class="coin-list__check">✓</span><span>outils et méthodes concrètes</span></li>
+            <li class="coin-list__item"><span class="coin-list__check">✓</span><span>psychologie du passage à l’action</span></li>
+            <li class="coin-list__item"><span class="coin-list__check">✓</span><span>guides et ressources occasionnelles</span></li>
+            <li class="coin-list__item"><span class="coin-list__check">✓</span><span>coulisses de Sheedoz</span></li>
+          </ul>
+        </div>
+
+        <aside class="coin-card" aria-label="Formulaire d'inscription au Coin">
+          <form class="coin-form" id="coin-form" novalidate>
+            <div>
+              <label class="coin-label" for="email">Adresse email</label>
+              <input class="coin-input" id="email" name="email" type="email" placeholder="ton@email.com" autocomplete="email" inputmode="email" required>
+              <p class="coin-error" id="email-error" hidden>Entre une adresse email valide.</p>
+            </div>
+
+            <label class="coin-consent">
+              <input class="coin-checkbox" id="consent" name="consent" type="checkbox" required>
+              <span>Je souhaite recevoir Le Coin, la newsletter de Sheedoz, par email.</span>
+            </label>
+            <p class="coin-error" id="consent-error" hidden>Coche la case pour confirmer ton consentement.</p>
+
+            <input class="coin-honeypot" id="company" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <p class="coin-privacy">
+              En t’inscrivant, tu recevras les emails du Coin et occasionnellement des informations sur Sheedoz. Tu peux retirer ton consentement à tout moment via le lien de désinscription présent dans chaque email.
+              <a href="../legal/confidentialite.html">Politique de confidentialité</a>
+            </p>
+
+            <p class="coin-alert" id="form-alert" hidden></p>
+
+            <button class="coin-button" id="submit-button" type="submit" disabled>Rejoindre Le Coin</button>
+          </form>
+
+          <div class="coin-success" id="coin-success" role="status" aria-live="polite">
+            <span class="coin-success__icon">✓</span>
+            <h2>Bienvenue dans Le Coin 🧡<br>Ton inscription est confirmée.</h2>
+            <p>Vérifie ta boîte mail dans les prochaines minutes. Si un email de confirmation t’attend, ouvre-le pour finaliser ton inscription.</p>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var SUPABASE_URL = 'https://khbnsidleqhuobcnmxte.supabase.co';
+      var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtoYm5zaWRsZXFodW9iY25teHRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUxNzMyNTEsImV4cCI6MjA2MDc0OTI1MX0.h5R_bTQKHUZfJp2m4gab0GLQjk-ZWxPtQBNE4jloz-E';
+      var CONSENT_TEXT = 'Je souhaite recevoir Le Coin, la newsletter de Sheedoz, par email.';
+      var CONSENT_TEXT_VERSION = 'le_coin_public_signup_v1';
+      var SIGNUP_SOURCE = 'public_signup_page';
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      var form = document.getElementById('coin-form');
+      var email = document.getElementById('email');
+      var consent = document.getElementById('consent');
+      var company = document.getElementById('company');
+      var submitButton = document.getElementById('submit-button');
+      var emailError = document.getElementById('email-error');
+      var consentError = document.getElementById('consent-error');
+      var alertBox = document.getElementById('form-alert');
+      var success = document.getElementById('coin-success');
+
+      function validEmail() {
+        return emailPattern.test(email.value.trim().toLowerCase());
+      }
+
+      function updateState(showErrors) {
+        var emailOk = validEmail();
+        var consentOk = consent.checked;
+        submitButton.disabled = !(emailOk && consentOk);
+
+        if (showErrors) {
+          emailError.hidden = emailOk;
+          consentError.hidden = consentOk;
+        }
+      }
+
+      function utmParams() {
+        var params = new URLSearchParams(window.location.search);
+        return {
+          utm_source: params.get('utm_source') || undefined,
+          utm_medium: params.get('utm_medium') || undefined,
+          utm_campaign: params.get('utm_campaign') || undefined,
+          utm_content: params.get('utm_content') || undefined
+        };
+      }
+
+      email.addEventListener('input', function () { updateState(false); });
+      consent.addEventListener('change', function () { updateState(false); });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        updateState(true);
+        alertBox.hidden = true;
+        alertBox.textContent = '';
+
+        if (!validEmail() || !consent.checked) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Inscription...';
+
+        fetch(SUPABASE_URL + '/functions/v1/newsletter-subscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            apikey: SUPABASE_ANON,
+            Authorization: 'Bearer ' + SUPABASE_ANON
+          },
+          body: JSON.stringify(Object.assign({
+            email: email.value.trim().toLowerCase(),
+            consent_status: true,
+            consent_text: CONSENT_TEXT,
+            consent_text_version: CONSENT_TEXT_VERSION,
+            consent_source: SIGNUP_SOURCE,
+            source: SIGNUP_SOURCE,
+            source_detail: 'le_coin_public_page',
+            landing_page: window.location.href,
+            company: company.value
+          }, utmParams()))
+        })
+          .then(function (response) {
+            return response.json().catch(function () { return {}; }).then(function (payload) {
+              if (!response.ok || payload.ok === false) {
+                throw new Error(payload.error || 'Impossible de valider ton inscription pour le moment.');
+              }
+              return payload;
+            });
+          })
+          .then(function () {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          })
+          .catch(function (error) {
+            alertBox.textContent = error && error.message ? error.message : 'Impossible de valider ton inscription pour le moment.';
+            alertBox.hidden = false;
+            submitButton.disabled = false;
+          })
+          .finally(function () {
+            submitButton.textContent = 'Rejoindre Le Coin';
+            updateState(false);
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
